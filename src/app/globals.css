@@ -1,0 +1,111 @@
+@import "tailwindcss";
+
+:root {
+  --pink: #ff2d95;
+  --orange: #ff9a3c;
+  --cyan: #22d3ee;
+  --purple: #7c3aed;
+  --bg: #07060d;
+  --panel: #100e1a;
+  --panel-2: #181527;
+  --line: rgba(255, 255, 255, 0.08);
+}
+
+html,
+body {
+  background: var(--bg);
+  color: #f4f1ff;
+}
+
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  background-image:
+    radial-gradient(900px 500px at 85% -10%, rgba(255, 45, 149, 0.16), transparent 60%),
+    radial-gradient(800px 500px at -10% 10%, rgba(124, 58, 237, 0.16), transparent 60%);
+  background-attachment: fixed;
+}
+
+.font-display {
+  font-family: Impact, "Arial Black", "Helvetica Neue", sans-serif;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.vice-text {
+  background: linear-gradient(90deg, var(--pink), var(--orange));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.vice-btn {
+  background: linear-gradient(90deg, var(--pink), var(--orange));
+  color: #fff;
+  font-weight: 700;
+  box-shadow: 0 8px 30px -8px rgba(255, 45, 149, 0.6);
+  transition: transform 0.15s, filter 0.15s;
+}
+.vice-btn:hover:not(:disabled) {
+  filter: brightness(1.1);
+  transform: translateY(-1px);
+}
+.vice-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.panel {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 1rem;
+}
+
+.chip {
+  border: 1px solid var(--line);
+  background: var(--panel-2);
+  border-radius: 0.6rem;
+  padding: 0.35rem 0.7rem;
+  font-size: 0.8rem;
+  transition: all 0.15s;
+}
+.chip:hover {
+  border-color: rgba(255, 255, 255, 0.25);
+}
+.chip[data-on="true"] {
+  border-color: var(--pink);
+  background: rgba(255, 45, 149, 0.15);
+  color: #fff;
+}
+
+.field {
+  background: var(--panel-2);
+  border: 1px solid var(--line);
+  border-radius: 0.6rem;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.875rem;
+  outline: none;
+  width: 100%;
+}
+.field:focus {
+  border-color: var(--pink);
+}
+
+.yt-host iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  pointer-events: none;
+}
+
+input[type="range"] {
+  accent-color: var(--pink);
+  width: 100%;
+}
+
+.snap-feed {
+  scroll-snap-type: y mandatory;
+  scrollbar-width: none;
+}
+.snap-feed::-webkit-scrollbar {
+  display: none;
+}
